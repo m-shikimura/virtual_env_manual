@@ -115,7 +115,7 @@ $ composer -v
 
 ```sh
 $ cd /vagrant
-$ omposer create-project --prefer-dist laravel/laravel laravel_app "6.*"
+$ composer create-project "laravel/laravel=6.0.*" --prefer-dist laravel_app
 
 $ cd laravel_app
 ```
@@ -253,8 +253,9 @@ $ sudo systemctl start php-fpm
 
 再度ブラウザにて、 http://192.168.33.19 を入力して確認してください。
 
-## 12. Permission deniedエラーが表示された場合
+## 12. Permission deniedエラーを解消する
 以下のようなLaravelのエラーが表示されます。
+Laravelのstorageディレクトリに対する実行権限が付与されていないためエラーが発生しています。
 ```
 The stream or file "/vagrant/laravel_app/storage/logs/laravel.log" could not be opened: failed to open stream: Permission denied
 ```
